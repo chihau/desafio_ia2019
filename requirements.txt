@@ -1,4 +1,0 @@
-ipython-sql
-pandas
-numpy
-matplotlib
