@@ -5,6 +5,7 @@
 ### Algoritmos de Regresión y Clasificación con Python
 - Descarga el archivo [Cities.csv](https://raw.githubusercontent.com/chihau/desafio_ia2019/master/machine_learning/python/Cities.csv)
 - [Google Colab - Regression](https://colab.research.google.com/github/chihau/desafio_ia2019/blob/master/machine_learning/python/PythonRegression.ipynb)
+- [Google Colab - Polynomial Regression](https://colab.research.google.com/github/chihau/desafio_ia2019/blob/master/machine_learning/python/PythonRegressionPolynomial2.ipynb)
 - [Google Colab - Classification](https://colab.research.google.com/github/chihau/desafio_ia2019/blob/master/machine_learning/python/PythonClassification.ipynb)
 
 ### Redes Neuronales con Tensorflow
