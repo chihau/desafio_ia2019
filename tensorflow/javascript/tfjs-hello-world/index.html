@@ -1,0 +1,39 @@
+<html>
+ <head>
+ <!-- Load TensorFlow.js -->
+ <!-- Get latest version at https://github.com/tensorflow/tfjs -->
+ <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> 
+ </script>
+ </head>
+ <body>
+   <div id="output_field"></div>
+ </body>
+ <script>
+ async function learnLinear(){
+  const model = tf.sequential();
+  model.add(tf.layers.dense({units: 1, inputShape: [1]}));
+  const optimizer = tf.train.adam(0.1);
+  model.compile({
+   loss: 'meanSquaredError',
+   metrics: ['accuracy'],
+   optimizer: optimizer
+  });
+
+  const xs = tf.tensor2d([-40, -10, 0, 8, 15, 22, 38], [7, 1]);
+  const ys = tf.tensor2d([-40, 14, 32, 46, 59, 72, 100], [7, 1]);
+
+  const history = await model.fit(xs, ys, {epochs: 500});
+  //console.log(history.history.loss[499]);
+
+  //const model = await tf.loadLayersModel('tfjs_target_dir/model.json');
+  // Recordar que si el navegador puede lanzar un error relacionado con CORS
+  // por lo que se puede montar un servidor web con python -m SimpleHTTPServer 8000
+
+  document.getElementById('output_field').innerText =
+   model.predict(tf.tensor2d([100.0], [1, 1]));
+ }
+
+ learnLinear();
+ </script>
+<html>
+
